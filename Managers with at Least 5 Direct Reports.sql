@@ -1,7 +1,7 @@
 --Option 1: subquery
 select name
 from employee
-where id = (select managerId
+where id in (select managerId
 from employee
 group by managerId
 having count(managerId) >=5)
